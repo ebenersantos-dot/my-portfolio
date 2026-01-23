@@ -6,6 +6,18 @@
         <title>Portifólio - Refatorando</title>
         <link rel="icon" href="public/images/logo-refatorando.png" type="image/x-icon">
         <link rel="stylesheet" href="public/css/styles.css">
+        <script>
+            function showMenu() {
+                let menu = document.querySelector("nav").querySelector("ul");
+
+                if (menu.style.display === "block"){
+                    menu.style.display = "none";
+                }
+                else{
+                    menu.style.display = "block"
+                }
+            }
+        </script>
     </head>
     <body>
         <div id="container">
@@ -16,11 +28,16 @@
                     />
                     <ul>
                         <li><a href="#">HOME</a></li>
-                        <li><a href="#">HABILIDADES</a></li>
-                        <li><a href="#">SOBRE</a></li>
-                        <li><a href="#">PROJETOS</a></li>
-                        <li><a href="#">CONTATO</a></li>
+                        <li><a href="#habilidades">HABILIDADES</a></li>
+                        <li><a href="#sobre">SOBRE</a></li>
+                        <li><a href="#projetos">PROJETOS</a></li>
+                        <li><a href="#contato">CONTATO</a></li>
                     </ul>
+                    <img id="menu-hamburger" 
+                    src="./public/images/icon-menu.svg" 
+                    width="40"
+                    onclick="showMenu()"
+                    />
                 </nav>
             </header>
             <div id="banner">
@@ -57,9 +74,92 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tecnologias">
+                        <img src="./public/images/icon-css3.png" alt="icone CSS">
+                        <div class="">
+                            <span>CSS</span>
+                            <div class="bar">
+                                <div style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tecnologias">
+                        <img src="./public/images/icon-javascript.png" alt="icone Javascript">
+                        <div class="">
+                            <span>Javascript</span>
+                            <div class="bar">
+                                <div style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tecnologias">
+                        <img src="./public/images/icon-git.png" alt="icone Git & Github">
+                        <div class="">
+                            <span>Git & Github</span>
+                            <div class="bar">
+                                <div style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tecnologias">
+                        <img src="./public/images/icon-typescript.png" alt="icone Typescript">
+                        <div class="">
+                            <span>Typescript</span>
+                            <div class="bar">
+                                <div style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tecnologias">
+                        <img src="./public/images/icon-tailwind.png" alt="icone Tailwind">
+                        <div class="">
+                            <span>Tailwind</span>
+                            <div class="bar">
+                                <div style="width: 45%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tecnologias">
+                        <img src="./public/images/icon-node.png" alt="icone Node.js">
+                        <div class="">
+                            <span>Node.js</span>
+                            <div class="bar">
+                                <div style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div id="projetos">
+                    <div class="title">
+                        Projetos
+                    </div>
+                    <div id="galeria_projetos">
+                        <a href="#"><img src="./public/images/projetos-login.png" alt="projeto login"></a>
+                        <a href="#"><img src="./public/images/projetos-todo-List.png" alt="projeto todo list"></a>
+                        <a href="#"><img src="./public/images/projetos-nft.png" alt="projeto marketplace nft"></a>
+                        <a href="#"><img src="./public/images/projetos-agendamento.png" alt="projeto agendamento mentoria"></a>
+                        <a href="#"><img src="./public/images/projetos-plataforma.png" alt="projeto plataforma lms"></a>
+                        <a href="#"><img src="./public/images/projetos-ecommerce.png" alt="projeto e-commerce"></a>
+
+                    </div>
+                </div>
+                <div id="contato">
+                    <div class="title">Contato</div>
+                    <div id="container_formulario">
+                        <h4>Enviar Mensagem:</h4>
+                        <form>
+                            <input type="text" placeholder="Nome*">
+                            <input type="text" placeholder="Número do celular">
+                            <input type="text" placeholder="E-mail*">
+                            <textarea placeholder="Mensagem"></textarea>
+                            <div>
+                                <input type="submit" value="Enviar Mensagem">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
     </body>
 </html>
