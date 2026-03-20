@@ -379,6 +379,7 @@ input[type="submit"]:hover {
 
 #galeria_projetos a {
     display: block;
+    aspect-ratio: 3 / 2;
     border-radius: 18px;
     overflow: hidden;
     background-color: var(--box-bg-color);
