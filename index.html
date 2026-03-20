@@ -1,166 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portifólio - Refatorando</title>
+        <title>Portfólio - Refatorando</title>
         <link rel="icon" href="public/images/logo-refatorando.png" type="image/x-icon">
         <link rel="stylesheet" href="public/css/styles.css">
-        <script>
-            function showMenu() {
-                let menu = document.querySelector("nav").querySelector("ul");
-
-                if (menu.style.display === "block"){
-                    menu.style.display = "none";
-                }
-                else{
-                    menu.style.display = "block"
-                }
-            }
-        </script>
+        <script src="public/js/main.js" defer></script>
     </head>
     <body>
         <div id="container">
             <header id="header">
                 <nav>
-                    <img src="./public/images/logo-refatorando.png" 
-                    alt="logo-refatorando" height="40"
-                    />
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#habilidades">HABILIDADES</a></li>
-                        <li><a href="#sobre">SOBRE</a></li>
-                        <li><a href="#projetos">PROJETOS</a></li>
-                        <li><a href="#contato">CONTATO</a></li>
+                    <a
+                        class="brand"
+                        href="#banner"
+                        data-i18n-aria-label="homeLinkLabel"
+                        aria-label="Página inicial do portfólio"
+                    >
+                        <img
+                            src="./public/images/logo-refatorando.png"
+                            data-i18n-alt="logoAlt"
+                            alt="Logo Refatorando"
+                            height="40"
+                        >
+                    </a>
+                    <ul id="nav-links">
+                        <li><a href="#banner" data-i18n="navHome">Home</a></li>
+                        <li><a href="#habilidades" data-i18n="navSkills">Habilidades</a></li>
+                        <li><a href="#sobre" data-i18n="navAbout">Sobre</a></li>
+                        <li><a href="#projetos" data-i18n="navProjects">Projetos</a></li>
+                        <li><a href="#contato" data-i18n="navContact">Contato</a></li>
                     </ul>
-                    <img id="menu-hamburger" 
-                    src="./public/images/icon-menu.svg" 
-                    width="40"
-                    onclick="showMenu()"
-                    />
+                    <div class="nav-actions">
+                        <div class="language-switcher">
+                            <label for="language-select" data-i18n="languageLabel">Idioma</label>
+                            <select
+                                id="language-select"
+                                data-i18n-aria-label="languageSelectLabel"
+                                aria-label="Selecionar idioma"
+                            >
+                                <option value="pt">PT</option>
+                                <option value="en">EN</option>
+                                <option value="es">ES</option>
+                            </select>
+                        </div>
+                        <button
+                            id="menu-hamburger"
+                            type="button"
+                            data-i18n-aria-label="menuButtonLabel"
+                            aria-label="Abrir menu"
+                            aria-controls="nav-links"
+                            aria-expanded="false"
+                        >
+                            <img src="./public/images/icon-menu.svg" alt="">
+                        </button>
+                    </div>
                 </nav>
             </header>
-            <div id="banner">
-                <div id="banner-shadow">
-
-                </div>
-                <h1> Ebener Santos</h1>
-            </div>
-            <div id="info">
-                <div id="sobre">
-                    <div class="title">Sobre Mim</div>
-                    <p>Sou um desenvolvedor Fullstack completo, tanto em habilidades técnicas, quando em outras habilidades que facilitam teamwork e workflow.</p>
-                    <p>Desde o primeiro ano desenvolvendo sites que geram impacto e impressionam aqueles que acessam.</p>
-                    <p>Além de vasta experiência com área gerenciamento comercial. Habilidade de comunicação e outras soft skills raras de encontrar no meio profissional de desenvolvedores.</p>
-                    <p>Sou capaz de entregar projetos de alta qualidade que abrangem tanto o front-end quanto o back-end, garantindo excelência em todas as etapas do desenvolvimento.</p>
-                <div id="social">
-                    <a href="https://github.com/ebenersantos-dot" target="_blank"><img src="./public/images/icon-github.png"></a>
-                    <a href="https://linkedin.com/in/ebenersantos" target="_blank"><img src="./public/images/icon-linkedin.png"> </a>
-                    <a href="#"><img src="./public/images/icon-instagram.png"></a>
-                </div>
-                </div>
-                <div id="habilidades">
-                    <div id="resumo">
-                        <h3>Desenvolvedor Fullstack</h3>
-                        <p>Com expertise liderança de projetos, e gerenciamento de equipe. Coordeno projetos de alta qualidade, abrangendo front-end e back-end.</p>
-                        <a href="#contato">Entrar em Contato</a>
-                    </div>
-                    <h3>Habilidades</h3>
-                    <div class="tecnologias">
-                        <img src="./public/images/icon-html5.png" alt="icone html5">
-                        <div class="">
-                            <span>HTML</span>
-                            <div class="bar">
-                                <div style="width: 98%;"></div>
-                            </div>
+            <main>
+                <section id="banner">
+                    <div id="banner-shadow"></div>
+                    <h1>Ebener Santos</h1>
+                </section>
+                <section id="info">
+                    <div id="sobre">
+                        <div class="title" data-i18n="aboutTitle">Sobre mim</div>
+                        <p data-i18n="aboutText1">
+                            Sou um desenvolvedor full-stack completo, com habilidades técnicas e
+                            competências que fortalecem o trabalho em equipe e o fluxo de
+                            desenvolvimento.
+                        </p>
+                        <p data-i18n="aboutText2">
+                            Desde o primeiro ano da minha carreira, desenvolvo sites que geram
+                            impacto e impressionam quem os acessa.
+                        </p>
+                        <p data-i18n="aboutText3">
+                            Também trago ampla experiência em gestão comercial, comunicação e soft
+                            skills raras no mercado de tecnologia.
+                        </p>
+                        <p data-i18n="aboutText4">
+                            Entrego projetos de alta qualidade do front-end ao back-end, com
+                            excelência em cada etapa do desenvolvimento.
+                        </p>
+                        <div id="social">
+                            <a
+                                href="https://github.com/ebenersantos-dot"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                            >
+                                <img src="./public/images/icon-github.png" alt="GitHub">
+                            </a>
+                            <a
+                                href="https://linkedin.com/in/ebenersantos"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                            >
+                                <img src="./public/images/icon-linkedin.png" alt="LinkedIn">
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <img src="./public/images/icon-instagram.png" alt="Instagram">
+                            </a>
                         </div>
                     </div>
-                    <div class="tecnologias">
-                        <img src="./public/images/icon-css3.png" alt="icone CSS">
-                        <div class="">
-                            <span>CSS</span>
-                            <div class="bar">
-                                <div style="width: 90%;"></div>
-                            </div>
+                    <div id="habilidades">
+                        <div id="resumo">
+                            <h2 data-i18n="summaryTitle">Desenvolvedor full-stack</h2>
+                            <p data-i18n="summaryText">
+                                Com experiência em liderança de projetos e gestão de equipes,
+                                coordeno entregas de alta qualidade que conectam front-end e
+                                back-end.
+                            </p>
+                            <a href="#contato" data-i18n="summaryCta">Entrar em contato</a>
                         </div>
-                    </div>
-                    <div class="tecnologias">
-                        <img src="./public/images/icon-javascript.png" alt="icone Javascript">
-                        <div class="">
-                            <span>Javascript</span>
-                            <div class="bar">
-                                <div style="width: 80%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tecnologias">
-                        <img src="./public/images/icon-git.png" alt="icone Git & Github">
-                        <div class="">
-                            <span>Git & Github</span>
-                            <div class="bar">
-                                <div style="width: 80%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tecnologias">
-                        <img src="./public/images/icon-typescript.png" alt="icone Typescript">
-                        <div class="">
-                            <span>Typescript</span>
-                            <div class="bar">
-                                <div style="width: 60%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tecnologias">
-                        <img src="./public/images/icon-tailwind.png" alt="icone Tailwind">
-                        <div class="">
-                            <span>Tailwind</span>
-                            <div class="bar">
-                                <div style="width: 45%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tecnologias">
-                        <img src="./public/images/icon-node.png" alt="icone Node.js">
-                        <div class="">
-                            <span>Node.js</span>
-                            <div class="bar">
-                                <div style="width: 95%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div id="projetos">
-                    <div class="title">
-                        Projetos
-                    </div>
-                    <div id="galeria_projetos">
-                        <a href="#"><img src="./public/images/projetos-login.png" alt="projeto login"></a>
-                        <a href="#"><img src="./public/images/projetos-todo-List.png" alt="projeto todo list"></a>
-                        <a href="#"><img src="./public/images/projetos-nft.png" alt="projeto marketplace nft"></a>
-                        <a href="#"><img src="./public/images/projetos-agendamento.png" alt="projeto agendamento mentoria"></a>
-                        <a href="#"><img src="./public/images/projetos-plataforma.png" alt="projeto plataforma lms"></a>
-                        <a href="#"><img src="./public/images/projetos-ecommerce.png" alt="projeto e-commerce"></a>
-
-                    </div>
-                </div>
-                <div id="contato">
-                    <div class="title">Contato</div>
-                    <div id="container_formulario">
-                        <h4>Enviar Mensagem:</h4>
-                        <form>
-                            <input type="text" placeholder="Nome*">
-                            <input type="text" placeholder="Número do celular">
-                            <input type="text" placeholder="E-mail*">
-                            <textarea placeholder="Mensagem"></textarea>
+                        <h2 data-i18n="skillsTitle">Habilidades</h2>
+                        <div class="tecnologias">
+                            <img src="./public/images/icon-html5.png" alt="HTML5">
                             <div>
-                                <input type="submit" value="Enviar Mensagem">
+                                <span>HTML</span>
+                                <div class="bar">
+                                    <div style="width: 98%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tecnologias">
+                            <img src="./public/images/icon-css3.png" alt="CSS3">
+                            <div>
+                                <span>CSS</span>
+                                <div class="bar">
+                                    <div style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tecnologias">
+                            <img src="./public/images/icon-javascript.png" alt="JavaScript">
+                            <div>
+                                <span>JavaScript</span>
+                                <div class="bar">
+                                    <div style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tecnologias">
+                            <img src="./public/images/icon-git.png" alt="Git and GitHub">
+                            <div>
+                                <span>Git &amp; GitHub</span>
+                                <div class="bar">
+                                    <div style="width: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tecnologias">
+                            <img src="./public/images/icon-typescript.png" alt="TypeScript">
+                            <div>
+                                <span>TypeScript</span>
+                                <div class="bar">
+                                    <div style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tecnologias">
+                            <img src="./public/images/icon-tailwind.png" alt="Tailwind CSS">
+                            <div>
+                                <span>Tailwind</span>
+                                <div class="bar">
+                                    <div style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tecnologias">
+                            <img src="./public/images/icon-node.png" alt="Node.js">
+                            <div>
+                                <span>Node.js</span>
+                                <div class="bar">
+                                    <div style="width: 95%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="projetos">
+                    <div class="title" data-i18n="projectsTitle">Projetos</div>
+                    <div id="galeria_projetos">
+                        <a
+                            href="#"
+                            data-i18n-aria-label="projectLoginLabel"
+                            aria-label="Projeto de tela de login"
+                        >
+                            <img
+                                src="./public/images/projetos-login.png"
+                                data-i18n-alt="projectLoginAlt"
+                                alt="Projeto de tela de login"
+                                loading="lazy"
+                            >
+                        </a>
+                        <a
+                            href="#"
+                            data-i18n-aria-label="projectTodoLabel"
+                            aria-label="Projeto de lista de tarefas"
+                        >
+                            <img
+                                src="./public/images/projetos-todo-List.png"
+                                data-i18n-alt="projectTodoAlt"
+                                alt="Projeto de lista de tarefas"
+                                loading="lazy"
+                            >
+                        </a>
+                        <a
+                            href="#"
+                            data-i18n-aria-label="projectNftLabel"
+                            aria-label="Projeto de marketplace NFT"
+                        >
+                            <img
+                                src="./public/images/projetos-nft.png"
+                                data-i18n-alt="projectNftAlt"
+                                alt="Projeto de marketplace NFT"
+                                loading="lazy"
+                            >
+                        </a>
+                        <a
+                            href="#"
+                            data-i18n-aria-label="projectMentoringLabel"
+                            aria-label="Projeto de agendamento de mentoria"
+                        >
+                            <img
+                                src="./public/images/projetos-agendamento.png"
+                                data-i18n-alt="projectMentoringAlt"
+                                alt="Projeto de agendamento de mentoria"
+                                loading="lazy"
+                            >
+                        </a>
+                        <a
+                            href="#"
+                            data-i18n-aria-label="projectLmsLabel"
+                            aria-label="Projeto de plataforma LMS"
+                        >
+                            <img
+                                src="./public/images/projetos-plataforma.png"
+                                data-i18n-alt="projectLmsAlt"
+                                alt="Projeto de plataforma LMS"
+                                loading="lazy"
+                            >
+                        </a>
+                        <a
+                            href="#"
+                            data-i18n-aria-label="projectEcommerceLabel"
+                            aria-label="Projeto de e-commerce"
+                        >
+                            <img
+                                src="./public/images/projetos-ecommerce.png"
+                                data-i18n-alt="projectEcommerceAlt"
+                                alt="Projeto de e-commerce"
+                                loading="lazy"
+                            >
+                        </a>
+                    </div>
+                </section>
+                <section id="contato">
+                    <div class="title" data-i18n="contactTitle">Contato</div>
+                    <div id="container_formulario">
+                        <h2 data-i18n="contactSubtitle">Enviar mensagem</h2>
+                        <form>
+                            <input
+                                type="text"
+                                name="name"
+                                autocomplete="name"
+                                placeholder="Nome*"
+                                data-i18n-placeholder="namePlaceholder"
+                                data-i18n-aria-label="nameAriaLabel"
+                                aria-label="Nome"
+                                required
+                            >
+                            <input
+                                type="tel"
+                                name="phone"
+                                autocomplete="tel"
+                                placeholder="Número do celular"
+                                data-i18n-placeholder="phonePlaceholder"
+                                data-i18n-aria-label="phoneAriaLabel"
+                                aria-label="Número do celular"
+                            >
+                            <input
+                                type="email"
+                                name="email"
+                                autocomplete="email"
+                                placeholder="E-mail*"
+                                data-i18n-placeholder="emailPlaceholder"
+                                data-i18n-aria-label="emailAriaLabel"
+                                aria-label="E-mail"
+                                required
+                            >
+                            <textarea
+                                name="message"
+                                placeholder="Mensagem"
+                                data-i18n-placeholder="messagePlaceholder"
+                                data-i18n-aria-label="messageAriaLabel"
+                                aria-label="Mensagem"
+                            ></textarea>
+                            <div>
+                                <input
+                                    type="submit"
+                                    value="Enviar mensagem"
+                                    data-i18n-value="submitLabel"
+                                >
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
-
+                </section>
+            </main>
+        </div>
     </body>
 </html>
