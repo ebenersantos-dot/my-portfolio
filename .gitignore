@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Large assets — keep outside version control
+# Add to a CDN or image host instead
+public/images/logo-portfolio-large-icon.png
