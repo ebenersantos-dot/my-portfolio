@@ -1,0 +1,70 @@
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS
+   Single source of truth for all design values.
+   Every other file reads from these variables.
+───────────────────────────────────────────── */
+:root {
+    /* ── Colors ── */
+    --color-bg:             #0a0b0f;
+    --color-bg-2:           #0f1117;
+    --color-surface:        #13151c;
+    --color-surface-2:      #1a1d27;
+    --color-surface-3:      #1f2230;
+    --color-border:         rgba(255, 255, 255, 0.07);
+    --color-border-2:       rgba(255, 255, 255, 0.12);
+
+    --color-text:           #f0f2f7;
+    --color-text-2:         #9aa3b8;
+    --color-text-3:         #6b7491;
+
+    --color-accent:         #6c63ff;
+    --color-accent-2:       #8b85ff;
+    --color-accent-glow:    rgba(108, 99, 255, 0.25);
+    --color-accent-subtle:  rgba(108, 99, 255, 0.1);
+
+    --color-green:          #10b981;
+    --color-red:            #ef4444;
+
+    /* ── Typography ── */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* ── Spacing scale ── */
+    --space-1:  4px;
+    --space-2:  8px;
+    --space-3:  12px;
+    --space-4:  16px;
+    --space-5:  20px;
+    --space-6:  24px;
+    --space-8:  32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+    --space-32: 128px;
+
+    /* ── Border radius ── */
+    --radius-sm:   6px;
+    --radius-md:   12px;
+    --radius-lg:   20px;
+    --radius-xl:   28px;
+    --radius-full: 9999px;
+
+    /* ── Shadows ── */
+    --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md:     0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg:     0 12px 40px rgba(0, 0, 0, 0.6);
+    --shadow-accent: 0 0 40px var(--color-accent-glow);
+
+    /* ── Transitions ── */
+    --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in:     cubic-bezier(0.4, 0, 1, 1);
+    --duration:    250ms;
+    --duration-lg: 500ms;
+
+    /* ── Layout ── */
+    --nav-height:        72px;
+    --max-width:         1200px;
+    --section-padding-y: var(--space-32);
+    --section-padding-x: var(--space-8);
+}

@@ -1,0 +1,192 @@
+/* ─────────────────────────────────────────────
+   NAVIGATION
+   Fixed header, nav links, language switcher,
+   CTA button, and hamburger menu.
+───────────────────────────────────────────── */
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-height);
+    background: rgba(10, 11, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    transition: background var(--duration) ease,
+                border-color var(--duration) ease;
+}
+
+#header.scrolled {
+    background: rgba(10, 11, 15, 0.95);
+    border-color: var(--color-border-2);
+}
+
+#header nav {
+    max-width: var(--max-width);
+    height: 100%;
+    margin-inline: auto;
+    padding-inline: var(--space-8);
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+/* Brand / logo */
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: opacity var(--duration) ease;
+}
+
+.brand:hover { opacity: 0.8; }
+
+.brand:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
+/* Nav links */
+#nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-left: auto;
+}
+
+#nav-links a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-2);
+    border-radius: var(--radius-sm);
+    transition: color var(--duration) ease,
+                background var(--duration) ease;
+}
+
+#nav-links a:hover,
+#nav-links a.active {
+    color: var(--color-text);
+    background: var(--color-surface-2);
+}
+
+#nav-links a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Action group */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+/* Language switcher */
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+#language-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-2);
+    cursor: pointer;
+    transition: border-color var(--duration) ease,
+                color var(--duration) ease;
+}
+
+#language-select:hover {
+    border-color: var(--color-border-2);
+    color: var(--color-text);
+}
+
+#language-select:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-color: var(--color-accent);
+}
+
+#language-select option {
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+/* Nav CTA */
+.nav-cta {
+    padding: 8px 18px;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background var(--duration) ease,
+                transform var(--duration) ease;
+}
+
+.nav-cta:hover {
+    background: var(--color-accent-2);
+    transform: translateY(-1px);
+}
+
+.nav-cta:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* Hamburger */
+#menu-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    transition: background var(--duration) ease;
+    flex-shrink: 0;
+}
+
+#menu-hamburger:hover { background: var(--color-surface-2); }
+
+#menu-hamburger:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.hamburger-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: transform var(--duration) ease,
+                opacity var(--duration) ease;
+}
+
+#menu-hamburger[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#menu-hamburger[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+#menu-hamburger[aria-expanded="true"] .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}

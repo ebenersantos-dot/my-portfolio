@@ -1,0 +1,55 @@
+/* ─────────────────────────────────────────────
+   BUTTONS
+   All button variants. Add new variants here.
+───────────────────────────────────────────── */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: all var(--duration) var(--ease-out);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* Filled / primary */
+.btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 4px 20px var(--color-accent-glow);
+}
+
+.btn-primary:hover {
+    background: var(--color-accent-2);
+    box-shadow: 0 6px 28px rgba(108, 99, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Ghost / outlined */
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border-2);
+}
+
+.btn-ghost:hover {
+    background: var(--color-surface-2);
+    border-color: var(--color-border-2);
+    transform: translateY(-2px);
+}
+
+/* Full-width modifier */
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
